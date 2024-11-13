@@ -1,45 +1,12 @@
 <div class="container">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Add flat</a>
-          </li>
-          <li class="nav-item dropdown">
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Search</a>
-              <a class="dropdown-item" href="#">Add flat</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-        </ul>
-      </div>
-    </div>
-  </div>
+  <%=render "navbar"%>
   <!--TODO-->
-  <h1>All of our flat (<%=@flats.count%>)</h1>
-  <div class="row">
-    <%@flats.each do |flat|%>
-      <div class="card m-2 col-sm" style="width: 18rem;">
-        <img src="https://picsum.photos/seed/flat,NY/100/100" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%=flat.name%></h5>
-          <p class="card-text"><%=flat.description%></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    <%end%>
+  <div class="container">
+    <h1>All of our flat (<%=@flats.count%>)</h1>
+    <div class="row row-cols-3">
+      <%@flats.each do |flat|%>
+        <%= render "card", flat: flat%>
+      <%end%>
+    </div>
   </div>
 </div>
