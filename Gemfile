@@ -64,3 +64,6 @@ group :test do
 end
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+
+#Add simple fonts (by me)
+gem "simple_form"
